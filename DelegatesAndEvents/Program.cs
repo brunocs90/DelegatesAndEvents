@@ -2,7 +2,7 @@
 
 namespace DelegatesAndEvents
 {
-    public delegate void WorkPerformedHandler(int hours, WorkType workType);
+    public delegate int WorkPerformedHandler(int hours, WorkType workType);
 
     class Program
     {
@@ -13,14 +13,11 @@ namespace DelegatesAndEvents
             WorkPerformedHandler del3 = new WorkPerformedHandler(WorkPerformed3);
 
             del1 += del2 + del3;
-            del1(10, WorkType.GenerateReports);
 
-            //int finalHours = del1(10, WorkType.GenerateReports);
-            //Console.WriteLine(finalHours);
+            int finalHours = del1(10, WorkType.GenerateReports);
+            Console.WriteLine(finalHours);
 
             //var worker = new Worker();
-
-
             Console.Read();
         }
 
@@ -29,40 +26,38 @@ namespace DelegatesAndEvents
         //    Console.WriteLine("Hours worked: " + e.Hours + " " + e.WorkType);
         //}
 
-        //static void Worker_WorkCompleted(object sender, EventArgs e)
-        //{
-        //    Console.WriteLine("Worker is done");
-        //}
-
-        //static void DoWork(WorkPerformedHandler del)
-        //{
-        //    del(5, WorkType.GoToMeetings);
-        //}
+        static void Worker_WorkCompleted(object sender, EventArgs e)
+        {
+            Console.WriteLine("Worker is done");
+        }
 
         static void DoWork(WorkPerformedHandler del)
         {
-            del(5, WorkType.Golf);
+            del(5, WorkType.GoToMeetings);
         }
 
-        static void WorkPerformed1(int hours, WorkType workType)
+        static int WorkPerformed1(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed1 called {hours}");
+            return hours + 1;
         }
 
-        static void WorkPerformed2(int hours, WorkType workType)
+        static int WorkPerformed2(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed2 called {hours}");
+            return hours + 2;
         }
 
-        static void WorkPerformed3(int hours, WorkType workType)
+        static int WorkPerformed3(int hours, WorkType workType)
         {
             Console.WriteLine($"WorkPerformed3 called {hours}");
+            return hours + 3;
         }
     }
 
     public enum WorkType
     {
-        GoToMeeting,
+        GoToMeetings,
         Golf,
         GenerateReports
     }
