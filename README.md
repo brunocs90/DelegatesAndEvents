@@ -23,19 +23,28 @@ https://app.pluralsight.com/library/courses/csharp-events-delegates/table-of-con
 
 ## 🚀 Conceitos
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
-
 - Creating a Delegate
+
+Custom delegates are defined using the delegate keyword
+```c#
+public delegate void WorkPerformedHandler(int hours, WorkType workType);
+```
+
+Invoke a delegate
+```c#
+WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
+
+del(5, WorkType.Golf);
+
+static void WorkPerformed1(int hours, WorkType workType)
+{
+	Console.WriteLine($"WorkPerformed1 called {hours}");
+}
+```
+
 - Defining an Event
 - Raising Events
 - Creating an EventArgs Class
-
-Custom delegates are defined using the delegate keyword
-
-```c#
-public delegate void WorkPerformedHandler(int hours,
-WorkType workType);
-```
 
 ## :memo: Licença
 
