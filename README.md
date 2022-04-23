@@ -38,7 +38,7 @@ del(5, WorkType.Golf);
 
 static void WorkPerformed1(int hours, WorkType workType)
 {
-	Console.WriteLine($"WorkPerformed1 called {hours}");
+     Console.WriteLine($"WorkPerformed1 called {hours}");
 }
 ```
 
