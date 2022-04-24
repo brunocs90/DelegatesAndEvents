@@ -17,24 +17,32 @@ namespace DelegatesAndEvents
             //int finalHours = del1(10, WorkType.GenerateReports);
             //Console.WriteLine(finalHours); 
 
-            var worker = new Worker();
-            worker.WorkPerformed += delegate (object sender, WorkPerformedEventArgs e)
-            {
-                Console.WriteLine("Hours worked: " + e.Hours + " " + e.WorkType);
-            };
-            worker.WorkCompleted += delegate (object sender, EventArgs e)
-            {
-                Console.WriteLine("Worker is done");
-            };
+
+            var worker = new Worker();  
+            worker.WorkPerformed += new EventHandler<WorkPerformedEventArgs>(Worker_WorkPerformed);
+            //worker.WorkPerformed += Worker_WorkPerformed;
+            worker.WorkCompleted += new EventHandler(Worker_WorkCompleted);
+            //worker.WorkCompleted += new Worker_WorkCompleted;
             worker.DoWork(8, WorkType.GenerateReports);
+
+            //var worker = new Worker();
+            //worker.WorkPerformed += delegate (object sender, WorkPerformedEventArgs e)
+            //{
+            //    Console.WriteLine("Hours worked: " + e.Hours + " " + e.WorkType);
+            //};
+            //worker.WorkCompleted += delegate (object sender, EventArgs e)
+            //{
+            //    Console.WriteLine("Worker is done");
+            //};
+            //worker.DoWork(8, WorkType.GenerateReports);
 
             Console.Read();
         }
 
-        //static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
-        //{
-        //    Console.WriteLine("Hours worked: " + e.Hours + " " + e.WorkType);
-        //}
+        static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
+        {
+            Console.WriteLine("Hours worked: " + e.Hours + " " + e.WorkType);
+        }
 
         static void Worker_WorkCompleted(object sender, EventArgs e)
         {
@@ -59,12 +67,4 @@ namespace DelegatesAndEvents
             return hours + 3;
         }
     }
-
-    public enum WorkType
-    {
-        GoToMeetings,
-        Golf,
-        GenerateReports
-    }
-
 }
