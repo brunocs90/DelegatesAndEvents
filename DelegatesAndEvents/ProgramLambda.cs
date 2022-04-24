@@ -40,28 +40,9 @@ namespace DelegatesAndEvents
 
             Func<int, int, int> funcAddDel = (x, y) => x + y;
             Func<int, int, int> funcMultipleDel = (x, y) => x * y;
-            data.ProcessFunc(3, 2, funcMultipleDel);
-
-            var worker = new Worker();
-            worker.WorkPerformed += (s, e) =>
-            {
-                Console.WriteLine("Worked: " + e.Hours + " hour(s) doing: " + e.WorkType);
-                Console.WriteLine("Some other value");
-            };
-            worker.WorkCompleted += (s, e) => Console.WriteLine("Work is complete!");
-            worker.DoWork(8, WorkType.GenerateReports);
+            data.ProcessFunc(3, 2, funcMultipleDel);           
 
             Console.Read();
         }
-
-        //static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
-        //{
-        //    Console.WriteLine("Worked: " + e.Hours + " hours(s) doing: " + e.WorkType);
-        //}
-
-        //static void Worker_WorkCompleted(object sender, EventArgs e)
-        //{
-        //    Console.WriteLine("Work is complete!");
-        //}
     }
 }
