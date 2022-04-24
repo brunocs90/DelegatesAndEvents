@@ -23,8 +23,13 @@ https://app.pluralsight.com/library/courses/csharp-events-delegates/table-of-con
 
 ## 🚀 Conceitos
 
-- Creating a Delegate
+## O que é Delegate?
+É um tipo que representa referências aos métodos com lista de parâmetros e tipo de retorno específicos. Ao instanciar um delegado, você pode associar sua instância a qualquer método com assinatura e tipo de retorno compatíveis. Você pode invocar (ou chamar) o método através da instância de delegado.
 
+Delegados são usados para passar métodos como argumentos a outros métodos. Os manipuladores de eventos nada mais são do que métodos chamados por meio de delegados. Ao criar um método personalizado, uma classe como um controle do Windows poderá chamá-lo quando um determinado evento ocorrer
+
+
+### 1. Creating a Delegate
 Custom delegates are defined using the delegate keyword
 ```c#
 public delegate void WorkPerformedHandler(int hours, WorkType workType);
@@ -42,15 +47,13 @@ static void WorkPerformed1(int hours, WorkType workType)
 }
 ```
 
-- Defining an Event
-
+### 2. Defining an Event
 Events can be defined in a class using the event keyword
 ```c#
 public event WorkPerformedHandler WorkPerformed;
 ```
 
-- Raising Events
-
+### 4. Raising Events
 Events are raised by calling the event like a method:
 ```c#
 if (WorkPerformed != null) {
@@ -66,8 +69,7 @@ if (del != null) {
 }
 ```
 
-- Creating an EventArgs Class
-
+### 4. Creating an EventArgs Class
 The EventArgs class is used in the signature of many delegates and event handlers:
 ```c#
 public void button_Click(object sender, EventArgs e)

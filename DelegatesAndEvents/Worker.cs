@@ -32,8 +32,6 @@ namespace DelegatesAndEvents
             {                
                 del(this, new WorkPerformedEventArgs(hours, workType));
             }
-
-            Console.WriteLine($"OnWorkPerformed {hours}");
         }
 
         //Raise Event
@@ -49,8 +47,6 @@ namespace DelegatesAndEvents
             {                
                 del(this, EventArgs.Empty);
             }
-
-            Console.WriteLine($"OnWorkCompleted");
         }
     }
 }
