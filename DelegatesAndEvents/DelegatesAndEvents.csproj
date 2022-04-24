@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DelegatesAndEvents.ProgramLambda</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,7 +47,8 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="ProcessData.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ProgramLambda.cs" />
+    <Compile Include="ProgramEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Worker.cs" />
     <Compile Include="WorkPerformedEventArgs.cs" />
