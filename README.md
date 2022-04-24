@@ -53,7 +53,7 @@ Events can be defined in a class using the event keyword
 public event WorkPerformedHandler WorkPerformed;
 ```
 
-### 4. Raising Events
+### 3. Raising Events
 Events are raised by calling the event like a method:
 ```c#
 if (WorkPerformed != null) {
