@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesAndEvents", "DelegatesAndEvents\DelegatesAndEvents.csproj", "{9065AF47-D543-4097-91B5-A5023C37C98F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressBar", "ProgressBar\ProgressBar.csproj", "{92AF69CB-8C53-4C83-8448-B56A1BE02DEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +17,15 @@ Global
 		{9065AF47-D543-4097-91B5-A5023C37C98F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9065AF47-D543-4097-91B5-A5023C37C98F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9065AF47-D543-4097-91B5-A5023C37C98F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92AF69CB-8C53-4C83-8448-B56A1BE02DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92AF69CB-8C53-4C83-8448-B56A1BE02DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92AF69CB-8C53-4C83-8448-B56A1BE02DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92AF69CB-8C53-4C83-8448-B56A1BE02DEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {770F6F18-6C57-49CB-8EAC-2BFEAA9D32A3}
 	EndGlobalSection
 EndGlobal
