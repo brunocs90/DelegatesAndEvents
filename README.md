@@ -11,7 +11,7 @@
 <br>
 
 <p align="center">
-  <img alt="layout" src="./images/layout.PNG" width="50%">
+  <img alt="layout" src="./images/fluxo.PNG" width="50%">
 </p>
 
 <br>
